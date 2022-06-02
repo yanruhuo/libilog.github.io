@@ -1,0 +1,58 @@
+.gt-container .gt-header-textarea,
+.gt-container .gt-header-textarea:hover,
+.gt-container .gt-comment-admin .gt-comment-content,
+.gt-container .gt-header-preview,
+.gt-container .gt-comment-content {
+  max-height: 15rem;
+  background-color: var(--black);
+}
+
+.gt-container .gt-header-textarea,
+.gt-container .gt-header-preview {
+  height: 6rem !important;
+  overflow: auto;
+}
+
+.gt-comment-content {
+  @apply rounded;
+}
+
+.gt-container .gt-comment-content:hover {
+  @apply shadow-none;
+}
+
+.gt-header-preview,
+.gt-container a.is--active,
+.gt-container .gt-version,
+.gt-container .gt-comment-body {
+  color: var(--white) !important;
+}
+
+.gt-container .gt-popup {
+  @apply rounded;
+  background-color: var(--black);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.gt-container a,
+.gt-container .gt-comment-username,
+.gt-container .gt-header-controls-tip {
+  color: var(--blue);
+}
+
+.gt-container .gt-btn-preview {
+  background-color: var(--white);
+  border: none;
+}
+
+.gt-container .gt-svg svg {
+  fill: var(--blue);
+}
+
+.gt-container .gt-user .gt-ico svg {
+  fill: var(--white);
+}
+
+.gt-container .gt-meta {
+  border: none;
+}

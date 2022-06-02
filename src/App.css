@@ -1,0 +1,98 @@
+.app {
+  @apply min-h-screen overflow-x-hidden select-none text-gray-200 tracking-wide bg-no-repeat bg-fixed;
+  padding-left: 33.333333vw;
+  background-color: var(--black-lighter);
+}
+
+.app::before {
+  @apply fixed top-0 left-0 w-screen h-screen;
+  content: '';
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--black);
+  background-image: url('./assets/images/background.jpg');
+}
+
+@media (max-width: 1024px) {
+  .app {
+    padding-left: 0;
+  }
+}
+
+/* page fade animation */
+.fade {
+  @apply w-full self-start;
+  animation: fade 0.8s ease-out;
+}
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in-appear,
+.fade-in-enter {
+  opacity: 0;
+  transform: translateY(-3rem);
+}
+.fade-in-appear-active,
+.fade-in-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.6s ease-in-out;
+}
+.fade-in-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in-exit-active {
+  opacity: 0;
+  transform: translateY(-3rem);
+  transition: all 0.6s ease-in-out;
+}
+
+/* custom page */
+.page {
+  @apply relative w-full min-h-screen pt-8 lg:pt-12 pb-8 lg:pb-12 px-4 md:px-8 lg:pr-32 lg:pl-0 flex items-center select-text;
+}
+
+/* link */
+.link {
+  @apply relative;
+  color: var(--blue-light);
+}
+.link::after {
+  @apply absolute left-1/2 bottom-0 w-0 h-px bg-current 
+  transform transition-all duration-500 -translate-x-1/2;
+  content: '';
+}
+.link:hover::after {
+  @apply w-full;
+}
+
+.link::before {
+  @apply absolute top-0 left-0 py-0.5 px-1.5 z-10 text-sm break-normal whitespace-nowrap rounded shadow-inner
+  origin-bottom-left transform transition-all duration-500 opacity-0 scale-50 -translate-y-4;
+  content: attr(href);
+  color: var(--blue-light);
+  background-color: var(--black);
+}
+.link:hover::before {
+  @apply opacity-100 scale-100 -translate-y-7;
+}
+
+.link-defalut {
+  color: var(--white);
+}
+
+.link-defalut:hover {
+  color: var(--blue-light);
+}
+
+.markdown-body-scrollable {
+  background: #f60;
+}
